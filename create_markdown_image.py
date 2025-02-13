@@ -9,7 +9,7 @@ from io import BytesIO
 class CreateMarkdownImage:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "createmarkdownimage"
-    CATEGORY = "KJNodes/text"
+    CATEGORY = "text"
     DESCRIPTION = (
         "Creates an image from markdown text using imgkit. "
         "The text is auto-scaled to fit within the container."
