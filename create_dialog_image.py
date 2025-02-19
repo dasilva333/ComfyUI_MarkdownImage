@@ -1,6 +1,5 @@
 import torch
 import numpy as np
-from pathlib import Path
 from PIL import Image
 from .dialog_generator import create_dialog_image, overlay_dialog_on_background
 

@@ -4,6 +4,7 @@ import imgkit
 from PIL import Image
 import torch
 import numpy as np
+import markdown
 
 # wkhtmltoimage executable path
 WKHTMLTOIMAGE_PATH = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltoimage.exe"
@@ -16,6 +17,7 @@ def create_dialog_image(label_enabled, label_content, label_font_color, label_fo
         f'<div class="name-label {"right-label" if label_position == "right" else "left-label"}">{label_content}</div>'
         if label_enabled else ""
     )
+    dialog_html = markdown.markdown(dialog_content)
 #         @import url('https://fonts.googleapis.com/css2?family={font_family.replace(' ', '+')}:wght@600&display=swap');
     styled_html = f"""
 <html>
@@ -29,6 +31,10 @@ def create_dialog_image(label_enabled, label_content, label_font_color, label_fo
             align-items: center;
             justify-content: {dialog_alignment};
             height: 100%;
+        }}
+        p, span, div, h1, h2, h3, h4, h5, h6 {{
+            margin: 0;
+            padding: 0;
         }}
         .container {{
             width: {canvas_width}px;
@@ -72,7 +78,7 @@ def create_dialog_image(label_enabled, label_content, label_font_color, label_fo
 <body>
     <div class="container">
         {label_html}
-        <div class="dialog-box">{dialog_content}</div>
+        <div class="dialog-box">{dialog_html}</div>
     </div>
 </body>
 </html>
