@@ -15,7 +15,7 @@ class CreateDialogImageV2:
             "required": {
                 "label_content": ("STRING", {"default": "Dr. Aeda"}),
                 "label_enabled": ([True, False], {"default": True}),
-                "label_position": (["left", "right"], {"default": "right"}),
+                "label_position": (["left", "right"], {"default": "right"}), 
                 "label_font_size": ("INT", {"default": 28, "min": 8, "max": 64, "step": 1}),
                 "label_font_color": ("STRING", {"default": "#C71585"}),
                 "label_width": ("INT", {"default": 180, "min": 50, "max": 4096, "step": 10}),

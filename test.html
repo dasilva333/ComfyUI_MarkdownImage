@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>FitText</title>
+
+    <style type="text/css">
+        /* Base Styles */
+        body {
+            font: 16px/1.8 sans-serif;
+            transition: background 0.3s ease-in-out;
+            width: 1024px;
+            /* height: 300px; */
+        }
+
+        .container {
+            width: 91%;
+            margin: 0 auto;
+            max-width: 1140px;
+        }
+
+        header {
+            width: 100%;
+            margin: 0px auto;
+        }
+
+        h1 {
+            white-space: nowrap;
+            text-align: center;
+            font: 95px/1 "Noto Color Emoji";
+            text-transform: uppercase;
+            display: block;
+            margin: 0;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+        }
+
+        /* Theme 1: Soft Pastel */
+        .theme-pastel {
+            background: #FFD9E6;
+            color: #6B104B;
+        }
+
+        .theme-pastel h1 {
+            background: rgba(255, 182, 193, 0.8);
+            color: #6B104B;
+            text-shadow: #FFCC80 -1px 1px 0,
+                /* Soft orange */
+                #FFB347 -2px 2px 0,
+                /* Peach */
+                #E57373 -3px 3px 0,
+                /* Coral */
+                #E57373 -4px 4px 0;
+        }
+
+        /* Theme 2: Vibrant Barbie */
+        .theme-barbie {
+            background: #FFB6C1;
+            color: #C2185B;
+        }
+
+        .theme-barbie h1 {
+            background: #FF4081;
+            color: #FFFFFF;
+            text-shadow: #FFC107 -1px 1px 0,
+                /* Gold */
+                #FFEB3B -2px 2px 0,
+                /* Yellow */
+                #E91E63 -3px 3px 0,
+                /* Fuchsia */
+                #E91E63 -4px 4px 0;
+        }
+
+        /* Theme 3: Elegant Rose Gold */
+        .theme-rose {
+            background: #FADADD;
+            color: #8B3A62;
+        }
+
+        .theme-rose h1 {
+            background: #DB7093;
+            color: #FFF5E1;
+            text-shadow: #FFD700 -1px 1px 0,
+                /* Gold */
+                #FFC0CB -2px 2px 0,
+                /* Light pink */
+                #B76E79 -3px 3px 0,
+                /* Warm rose */
+                #B76E79 -4px 4px 0;
+        }
+
+        /* Theme 4: Preppy (Bright, fun, high-contrast) */
+        .theme-preppy {
+            background: #FFDEF0;
+            /* Light bubblegum pink */
+            color: #3B1D70;
+            /* Deep purple */
+        }
+
+        .theme-preppy h1 {
+            background: #FF69B4;
+            /* Hot pink */
+            color: #FFFFFF;
+            /* White text */
+            text-shadow: #FF9800 -1px 1px 0,
+                /* Warm orange */
+                #FF5722 -2px 2px 0,
+                /* Bright coral */
+                #8B008B -3px 3px 0,
+                /* Deep purple */
+                #8B008B -4px 4px 0;
+        }
+
+        /* Theme 5: Neutral Sky (Cool blues & grays) */
+        .theme-neutral-sky {
+            background: #E3F2FD;
+            /* Light sky blue */
+            color: #37474F;
+            /* Dark slate gray */
+        }
+
+        .theme-neutral-sky h1 {
+            background: #90CAF9;
+            /* Soft blue */
+            color: #263238;
+            /* Deep slate */
+            text-shadow: #CFD8DC -1px 1px 0,
+                /* Cool gray */
+                #B0BEC5 -2px 2px 0,
+                /* Silver-gray */
+                #78909C -3px 3px 0,
+                /* Blue-gray */
+                #78909C -4px 4px 0;
+        }
+
+        /* Theme 6: Yellow Tan (Warm and earthy tones) */
+        .theme-yellow-tan {
+            background: #FFF9C4;
+            /* Soft yellow */
+            color: #5D4037;
+            /* Warm brown */
+        }
+
+        .theme-yellow-tan h1 {
+            background: #FFCC80;
+            /* Golden tan */
+            color: #4E342E;
+            /* Dark brown */
+            text-shadow: #F57F17 -1px 1px 0,
+                /* Deep gold */
+                #FFB74D -2px 2px 0,
+                /* Warm amber */
+                #6D4C41 -3px 3px 0,
+                /* Coffee brown */
+                #6D4C41 -4px 4px 0;
+        }
+    </style>
+
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body class="theme-yellow-tan"> <!-- Default theme is pastel -->
+
+    <div class="container">
+        <header>
+            <h1 id="fittext1">Girl: I can't wait for the field trip! 😄</h1>
+        </header>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://www.jqueryscript.net/demo/FitText-Flexible-Font-Size-Plugin/jquery.fittext.js"></script>
+
+    <script type="text/javascript">
+        $("#fittext1").fitText();
+        // document.getElementById("fittext1").innerHTML = document.location.search.slice(1).split('=')[1];
+    </script>
+
+</body>
+
+</html>

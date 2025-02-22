@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Fitting-Text-To-Its-Container-textFit/examples/jquery.textFit.slow.js"></script>
+    <script>
+        $(function () {
+            $("#vertCentered").textFit({ alignHoriz: true, alignVert: true });
+        });
+    </script>
+    <style>
+
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        h1 {
+            border-bottom: 2px solid white;
+            display: inline-block;
+            margin: 0;
+            color: white;
+        }
+
+        body {
+            font: 16px/1.8 sans-serif;
+            transition: background 0.3s ease-in-out;
+            width: 1024px;
+            margin: 0px;
+            /* height: 300px; */
+        }
+
+        .container {
+            /* width: 91%; */
+            margin: 0 auto;
+            max-width: 1196px;
+        }
+
+        h1 {
+            white-space: nowrap;
+            text-align: center;
+            font: 95px/1 "Noto Color Emoji";
+            text-transform: uppercase;
+            display: block;
+            margin: 0;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+        }
+
+        /* Theme 1: Soft Pastel */
+        .theme-pastel {
+            background: #FFD9E6;
+            color: #6B104B;
+        }
+
+        .theme-pastel .container {
+            background: rgba(255, 182, 193, 0.8);
+            color: #6B104B;
+            text-shadow: #FFCC80 -1px 1px 0,
+                /* Soft orange */
+                #FFB347 -2px 2px 0,
+                /* Peach */
+                #E57373 -3px 3px 0,
+                /* Coral */
+                #E57373 -4px 4px 0;
+        }
+
+        #vertCentered {
+            height: 120px;
+            width: 1024px;
+        }
+
+    </style>
+    <title>jQuery textFit Examples</title>
+</head>
+
+<body class="theme-pastel"> <!-- Default theme is pastel -->
+
+    <div class="container">
+        <div id="vertCentered">Girl: I can't wait for the field trip! 😄 <br> Man: Me too!</div>
+    </div>
+
+</body>
+
+</html>

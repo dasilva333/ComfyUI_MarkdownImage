@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fitty Demo Page</title>
+    <link href="https://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet"
+        type="text/css">
+    <style>
+        body {
+            font: 16px/1.8 sans-serif;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .container {
+            width: 91%;
+            margin: 0 auto;
+            max-width: 1140px;
+        }
+
+        header {
+            width: 100%;
+            margin: 0px auto;
+        }
+
+        h1 {
+            /* white-space: nowrap; */
+            text-align: center;
+            font: 95px/1 "Noto Color Emoji";
+            text-transform: uppercase;
+            display: block;
+            margin: 5px;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+        }
+
+        .fit {
+            display: inline-block;
+            /* white-space: nowrap; */
+        }
+    </style>
+</head>
+
+<body class="theme-yellow-tan"> <!-- Default theme is pastel -->
+
+    <!-- <div class="fit">Maecenas elementum purus nec felis pellentesque, eget volutpat mauris vestibulum.</div> -->
+
+
+    <div class="container">
+        <header>
+            <h1 id="fittext1" class="fit">Girl: I can't wait for the field trip! 😄</h1>
+        </header>
+    </div>
+
+    <script src="https://www.cssscript.com/demo/minimal-text-resizing-javascript-library-fitty/fitty.min.js"></script>
+    <script>
+        // is delayed a bit so it's clear when fitty kicks in
+        fitty('.fit');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Fitting-Text-To-Its-Container-textFit/examples/jquery.textFit.slow.js"></script>
+
+    <script>
+        // Function to parse URL parameters
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                md_text: params.get("md_text") || "Girl: I can't wait for the field trip! 😄 <br> Man: Me too!",
+                border_color: params.get("border_color") || "#6B104B",
+                border_size: params.get("border_size") || "3",
+                image_width: params.get("image_width") || "1024",
+                image_height: params.get("image_height") || "120",
+                theme: params.get("theme") || "pastel",
+            };
+        }
+
+        // Apply extracted parameters to the DOM
+        function applyParams() {
+            const params = getQueryParams();
+
+            // Apply text content
+            document.getElementById("vertCentered").innerHTML = params.md_text;
+
+            // Apply border color & size to #container
+            document.getElementById("container").style.border = `${params.border_size}px solid ${params.border_color}`;
+
+            // Apply width & height to #vertCentered
+            const vertCentered = document.getElementById("vertCentered");
+            vertCentered.style.width = `${params.image_width}px`;
+            vertCentered.style.height = `${params.image_height}px`;
+
+            // Apply theme
+            document.body.className = `theme-${params.theme}`;
+        }
+
+        // Wait for DOM to load, then apply parameters
+        window.onload = function () {
+            applyParams();
+            $("#vertCentered").textFit({ alignHoriz: true });
+        };
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        body {
+            font: 16px/1.8 sans-serif;
+            transition: background 0.3s ease-in-out;
+            margin: 0px;
+        }
+
+        /* Container with dynamic border settings */
+        #container {
+            font-family: 'Noto Color Emoji', sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+
+        /* Dynamic width/height applied from JS */
+        #vertCentered {
+            font-size: 1px;
+            white-space: nowrap;
+            text-align: center;
+            word-spacing: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            text-transform: uppercase;
+        }
+        /* Theme 1: Soft Pastel */
+        .theme-pastel {
+            background: #FFD9E6;
+            color: #6B104B;
+        }
+
+        .theme-pastel #container {
+            background: rgba(255, 182, 193, 0.8);
+            color: #6B104B;
+            text-shadow: #FFCC80 -1px 1px 0,
+                #FFB347 -2px 2px 0,
+                #E57373 -3px 3px 0,
+                #E57373 -4px 4px 0;
+        }
+         /* Theme 2: Vibrant Barbie */
+         .theme-barbie {
+            background: #FFB6C1;
+            color: #C2185B;
+        }
+
+        .theme-barbie #container {
+            background: #FF4081;
+            color: #FFFFFF;
+            text-shadow: #FFC107 -1px 1px 0,
+                /* Gold */
+                #FFEB3B -2px 2px 0,
+                /* Yellow */
+                #E91E63 -3px 3px 0,
+                /* Fuchsia */
+                #E91E63 -4px 4px 0;
+        }
+
+        /* Theme 3: Elegant Rose Gold */
+        .theme-rose {
+            background: #FADADD;
+            color: #8B3A62;
+        }
+
+        .theme-rose #container {
+            background: #DB7093;
+            color: #FFF5E1;
+            text-shadow: #FFD700 -1px 1px 0,
+                /* Gold */
+                #FFC0CB -2px 2px 0,
+                /* Light pink */
+                #B76E79 -3px 3px 0,
+                /* Warm rose */
+                #B76E79 -4px 4px 0;
+        }
+
+        /* Theme 4: Preppy (Bright, fun, high-contrast) */
+        .theme-preppy {
+            background: #FFDEF0;
+            /* Light bubblegum pink */
+            color: #3B1D70;
+            /* Deep purple */
+        }
+
+        .theme-preppy #container {
+            background: #FF69B4;
+            /* Hot pink */
+            color: #FFFFFF;
+            /* White text */
+            text-shadow: #FF9800 -1px 1px 0,
+                /* Warm orange */
+                #FF5722 -2px 2px 0,
+                /* Bright coral */
+                #8B008B -3px 3px 0,
+                /* Deep purple */
+                #8B008B -4px 4px 0;
+        }
+
+        /* Theme 5: Neutral Sky (Cool blues & grays) */
+        .theme-neutral-sky {
+            background: #E3F2FD;
+            /* Light sky blue */
+            color: #37474F;
+            /* Dark slate gray */
+        }
+
+        .theme-neutral-sky #container {
+            background: #90CAF9;
+            /* Soft blue */
+            color: #263238;
+            /* Deep slate */
+            text-shadow: #CFD8DC -1px 1px 0,
+                /* Cool gray */
+                #B0BEC5 -2px 2px 0,
+                /* Silver-gray */
+                #78909C -3px 3px 0,
+                /* Blue-gray */
+                #78909C -4px 4px 0;
+        }
+
+        /* Theme 6: Yellow Tan (Warm and earthy tones) */
+        .theme-yellow-tan {
+            background: #FFF9C4;
+            /* Soft yellow */
+            color: #5D4037;
+            /* Warm brown */
+        }
+
+        .theme-yellow-tan #container {
+            background: #FFCC80;
+            /* Golden tan */
+            color: #4E342E;
+            /* Dark brown */
+            text-shadow: #F57F17 -1px 1px 0,
+                /* Deep gold */
+                #FFB74D -2px 2px 0,
+                /* Warm amber */
+                #6D4C41 -3px 3px 0,
+                /* Coffee brown */
+                #6D4C41 -4px 4px 0;
+        }
+    </style>
+
+    <title>jQuery textFit with Dynamic Query Parameters</title>
+</head>
+
+<body class="theme-pastel"> <!-- Default theme -->
+
+    <div id="container">
+        <div id="vertCentered">Loading...</div>
+    </div>
+
+</body>
+
+</html>
