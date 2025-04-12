@@ -1,0 +1,15 @@
+[project]
+name = "markdownimage"
+description = "This project generates an image from Markdown text using imgkit and wkhtmltoimage. It automatically scales the text to fit within the specified image dimensions."
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["markdown", "imgkit", "numpy", "torch", "Pillow"]
+
+[project.urls]
+Repository = "https://github.com/dasilva333/ComfyUI_MarkdownImage"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI_MarkdownImage"
+Icon = ""
